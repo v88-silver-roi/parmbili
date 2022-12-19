@@ -1,0 +1,169 @@
+* body {
+  background-color: #6fcf97;
+  padding: 0px !important;
+  max-width: 1024px;
+  margin: 0px auto;
+}
+* body nav {
+  background-color: #27ae60;
+  padding: 13px 22px;
+}
+* body nav h2 {
+  color: #ffffff;
+  font: 24px/24px 'Public Sans';
+  margin: 0px;
+}
+* body .field {
+  align-content: flex-start;
+  border-left: solid 22px #219653;
+  border-right: solid 22px #219653;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+* body .field table {
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin: 40px auto 0px auto;
+  max-width: 430px;
+  padding: 30px auto;
+}
+* body .field table td {
+  line-height: 0px;
+  padding: 0px;
+}
+* body .field table .empty_field {
+  background-color: #828282;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+* body .field table button:focus {
+  outline: none;
+}
+* body .field table .tilled_field {
+  background-color: #f2994a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font: 14px/10px 'Public Sans';
+  height: 100px;
+  width: 100px;
+}
+* body .field h5 {
+  font: bold 20px/16px 'Public Sans';
+  color: #000000;
+  margin: 9px 0px 0px 275px;
+}
+* body .field .hidden {
+  display: none;
+}
+* body .popover {
+  width: 144px;
+}
+* body .popover .popover-body {
+  padding: 10px;
+}
+* body .popover .popover-body button {
+  margin: 0px auto;
+  text-align: center;
+  width: 124px;
+  font: 24px/24px 'Public Sans';
+}
+* body .crop_popover {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 373px;
+  left: 50%;
+  padding: 20px !important;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+}
+* body .crop_popover .modal-content {
+  border: none !important;
+  overflow: inherit;
+}
+* body .crop_popover .modal-content .modal-header {
+  border: none !important;
+  padding: 0px !important;
+}
+* body .crop_popover .modal-content .modal-body {
+  padding: 0px !important ;
+  text-align: center;
+}
+* body .crop_popover .modal-content .modal-body td {
+  display: flex;
+}
+* body .crop_popover .modal-content .modal-footer {
+  border: none !important;
+  padding: 0px !important ;
+}
+* body .crop_popover .modal-content .modal-footer button {
+  margin: 0px;
+}
+* body .crop_popover .modal-content .modal-footer .cancel_button {
+  margin-right: 20px;
+}
+* body .crop_popover h5 {
+  color: #2f80ed;
+  font: bold 20px/14px 'Public Sans';
+  margin: 19px 0px 0px 0px;
+  text-align: center;
+}
+* body .crop_popover table {
+  border-collapse: separate;
+  border-spacing: 20px;
+  margin: 0px;
+  padding: 0px;
+  width: 260px;
+}
+* body .crop_popover table td {
+  line-height: 0px;
+  max-height: 100px;
+  padding: 0px;
+}
+* body .crop_popover table td .crop_square {
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  padding: 9.5px 0px 15px 0px;
+  text-align: center;
+  width: 100px;
+}
+* body .crop_popover table td .crop_square img {
+  margin: 0px auto;
+}
+* body .crop_popover table td .crop_square span {
+  font: 12px/10px 'Public Sans';
+}
+* body .crop_popover table td .crop_square:focus {
+  background-color: #f2c94c !important;
+  outline: none;
+}
+* body .crop_popover div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+  text-align: center;
+}
+* body .crop_popover div button {
+  font: 24px/24px 'Public Sans';
+  margin: 0px;
+  width: 120px;
+}
+* body .crop_popover div .cancel_button {
+  margin-right: 20px;
+}
+* body .hidden {
+  display: none;
+}

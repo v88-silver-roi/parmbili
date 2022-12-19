@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parmbili</title>
+
+    <!-- jQuery Slim v.3.5.1 JS -->
+    <script src="./assets/jquery/jquery.slim.min.js"></script>
+
+    <!-- jQuery v.3.6.0 JS -->
+    <script src="./assets/jquery-3.6.0/jquery-3.6.0.js"></script>
+
+    <!-- Bootstrap v.4.6.2 CSS/JS -->
+    <script src="./assets/popper/popper.min.js"></script>
+    <link rel="stylesheet" href="./assets/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <script src="./assets/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS/JS -->
+    <link rel="stylesheet" href="./assets/css/parmbili.css">
+    <script src="./assets/js/parmbili.js"></script>
+    <style type="text/css">
+        .popover {
+            width: 304px;
+            max-width: 100%;
+        }
+        </style>
+        <script type="text/javascript">
+            $("#subscribe").popover({
+                title: '<h4>Newsletter Subscription</h4>',
+                container: 'body',
+                placement: 'bottom',
+                html: true, 
+                content: function() {
+                      return $('#popover-form').html();
+                }
+            });
+            </script>
+</head>
+<body>
+    <nav>
+        <h2>Parmbili</h2>
+    </nav>
+    <section class="field">
+        <table cellspacing="10">
+            <tr>
+                <td><button type="button" id="field_1" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_2" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_3" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_4" class="empty_field" data-toggle="popover"></button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="field_5" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_6" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_7" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_8" class="empty_field" data-toggle="popover"></button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="field_9" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_10" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_11" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_12" class="empty_field" data-toggle="popover"></button></td>
+            </tr>
+            <tr>
+                <td><button type="button" id="field_13" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_14" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_15" class="empty_field" data-toggle="popover"></button></td>
+                <td><button type="button" id="field_16" class="empty_field" data-toggle="popover"></button></td>
+            </tr>
+        </table>
+        <h5>Total Earnings: <span id="total_earnings">50$</span></h5>
+    </section>
+    <div class="modal crop_popover" id="crop_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5>Select a Crop to Plant</h5>
+                <input type="hidden" data_field_id="">
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tr>
+                        <td>
+                            <button class="crop_square" id="potato">
+                                <img src="./assets/images/potato.png" alt="potato">
+                                <span>60s / 10$ / 15$</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="crop_square" id="onion">
+                                <img src="./assets/images/onion.png" alt="onion">
+                                <span>80s / 15$ / 25$</span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="crop_square" id="carrot">
+                                <img src="./assets/images/carrot.png" alt="carrot">
+                                <span>120s / 25$ / 75$</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button class="crop_square" id="corn">
+                                <img src="./assets/images/corn.png" alt="corn">
+                                <span>180s / 35$ / 100$</span>
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cancel_button" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary plant_crop_button">Plant</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="potato_clone" class="hidden">
+        <img src="./assets/images/potato.png" alt="potato">
+        <span>60s</span>
+    </div>
+    <div id="onion_clone" class="hidden">
+        <img src="./assets/images/onion.png" alt="onion">
+        <span>80s</span>
+    </div>
+    <div id="carrot_clone" class="hidden">
+        <img src="./assets/images/carrot.png" alt="carrot">
+        <span>120s</span>
+    </div>
+    <div id="corn_clone" class="hidden">
+        <img src="./assets/images/corn.png" alt="corn">
+        <span>180s</span>
+    </div>
+</body>
+</html>
