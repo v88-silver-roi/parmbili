@@ -2,9 +2,9 @@
 
     body{
         background-color: #6fcf97;
-        padding: 0px !important;
-        max-width: 1024px;
         margin: 0px auto;
+        max-width: 1024px;
+        padding: 0px !important;
 
         nav{
             background-color: #27ae60;
@@ -16,63 +16,86 @@
                 margin: 0px;
             }
         }
-
-        .field{
-            align-content: flex-start;
+        section{
+            align-items: flex-start;
             border-left: solid 22px #219653;
             border-right: solid 22px #219653;
             display: flex;
             flex-direction: column;
             height: 100vh;
-
-            table{
-                border-collapse: separate;
-                border-spacing: 10px;
-                margin: 40px auto 0px auto;
+            
+            .field{
+                margin: 0px auto;
                 max-width: 430px;
-                padding: 30px auto;
-
-
-                td{
-                    line-height: 0px;
-                    padding: 0px;
+    
+                table{
+                    border-collapse: separate;
+                    border-spacing: 10px;
+                    margin: 40px 0px 0px 0px;
+                    padding: 30px auto;
+    
+                    td{
+                        line-height: 0px;
+                        padding: 0px;
+                    }
+    
+                    .empty_field{
+                        background-color: #828282;
+                        border-radius: 10px;
+                        border: none;
+                        cursor: pointer;
+                        height: 100px;
+                        width: 100px;
+                    }
+    
+                    button:focus{
+                        outline: none;
+                    }
+    
+                    .tilled_field{
+                        background-color: #f2994a;
+                        border-radius: 10px;
+                        border: none;
+                        cursor: pointer;
+                        font: 14px/10px 'Public Sans';
+                        height: 100px;
+                        width: 100px;
+                    }
+    
+                    .planted_field{
+                        background-color: #f2c94c;
+                        border-radius: 10px;
+                        border: none;
+                        cursor: pointer;
+                        font: 14px/10px 'Public Sans';
+                        height: 100px;
+                        width: 100px;
+                    }
+    
+                    .finished_planted_field{
+                        background-color: #219653;
+                        border-radius: 10px;
+                        border: none;
+                        color: #ffffff;
+                        cursor: pointer;
+                        font: 14px/10px 'Public Sans';
+                        height: 100px;
+                        width: 100px;
+                    }
                 }
-
-                .empty_field{
-                    background-color: #828282;
-                    border: none;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    height: 100px;
-                    width: 100px;
+    
+                h5{
+                    color: #000000;
+                    font: bold 20px/16px 'Public Sans';
+                    margin: 9px 0px 0px 10px;
                 }
-
-                button:focus{
-                    outline: none;
+    
+                .hidden{
+                    display: none;
                 }
-
-                .tilled_field{
-                    background-color: #f2994a;
-                    border: none;
-                    border-radius: 10px;
-                    cursor: pointer;
-                    font: 14px/10px 'Public Sans';
-                    height: 100px;
-                    width: 100px;
-                }
-            }
-
-            h5{
-                font: bold 20px/16px 'Public Sans';
-                color: #000000;
-                margin: 9px 0px 0px 275px;
-            }
-
-            .hidden{
-                display: none;
             }
         }
-
+        
         .popover{
             width: 144px;
 
@@ -80,20 +103,25 @@
                 padding: 10px;
 
                 button{
+                    font: 24px/24px 'Public Sans';
                     margin: 0px auto;
                     text-align: center;
                     width: 124px;
-                    font: 24px/24px 'Public Sans';
+                }
+
+                .harvest_button{
+                    margin: 0px 0px 10px 0px;
                 }
             }
         }
 
-        .crop_popover{
+        .crop_modal{
             background-color: #ffffff;
             border-radius: 10px;
             box-sizing: border-box;
             height: 373px;
             left: 50%;
+            overflow-y: hidden !important;
             padding: 20px !important;
             position: absolute;
             top: 50%;
@@ -113,8 +141,46 @@
                     padding: 0px !important ;
                     text-align: center;
 
-                    td{
-                        display: flex;
+                    table{
+                        border-collapse: separate;
+                        border-spacing: 20px;
+                        margin: 0px;
+                        padding: 0px; 
+                        width: 260px;
+                        
+                        td{
+                            line-height: 0px;
+                            max-height: 100px;
+                            padding: 0px;
+        
+                            .crop_square{
+                                background-color: #e0e0e0;
+                                border-radius: 10px;
+                                border: none;
+                                cursor: pointer;
+                                display: flex;
+                                flex-direction: column;
+                                height: 100px;
+                                justify-content: space-between;
+                                padding: 9.5px 0px 15px 0px;
+                                text-align: center;
+                                width: 100px;
+                                
+                                img{
+                                    margin: 0px auto;
+                                }
+        
+                                span{
+                                    font: 12px/10px 'Public Sans';
+                                    margin: 0px auto;
+                                }
+                            }
+        
+                            .crop_square:focus{
+                                background-color: #f2c94c !important;
+                                outline: none;
+                            }
+                        }
                     }
                 }
 
@@ -139,47 +205,6 @@
                 text-align: center;
             }
 
-            table{
-                border-collapse: separate;
-                border-spacing: 20px;
-                margin: 0px;
-                padding: 0px; 
-                width: 260px;
-                
-                td{
-                    line-height: 0px;
-                    max-height: 100px;
-                    padding: 0px;
-
-                    .crop_square{
-                        background-color: #e0e0e0;
-                        border: none;
-                        border-radius: 10px;
-                        cursor: pointer;
-                        display: flex;
-                        flex-direction: column;
-                        height: 100px;
-                        justify-content: space-between;
-                        padding: 9.5px 0px 15px 0px;
-                        text-align: center;
-                        width: 100px;
-                        
-                        img{
-                            margin: 0px auto;
-                        }
-
-                        span{
-                            font: 12px/10px 'Public Sans';
-                        }
-                    }
-
-                    .crop_square:focus{
-                        background-color: #f2c94c !important;
-                        outline: none;
-                    }
-                }
-            }
-
             div{
                 display: flex;
                 justify-content: space-between;
@@ -198,8 +223,120 @@
             }
         }
 
+        .remove_plant{
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-sizing: border-box;
+            height: 177px;
+            left: 50%;
+            overflow-y: hidden !important;
+            padding: 20px 26px !important;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            
+            .modal-dialog{
+                margin: 0px;
+
+                .modal-content{
+                    border: none !important;
+                    overflow: inherit;
+    
+                    .modal-header{
+                        border: none !important;
+                        padding: 0px !important;
+    
+                        h5{
+                            color: #eb5757;
+                            font: bold 20px/20px 'Public Sans';
+                            margin: 0px auto 17px auto;
+                        }
+                    }
+    
+                    .modal-body{
+                        padding: 0px !important ;
+                        text-align: center;
+    
+                        p{
+                            color: #333333;
+                            font: 16px/20px 'Public Sans';
+                            margin: 0px auto 20px auto;
+                            width: 166px;
+                        }
+                    }
+    
+                    .modal-footer{
+                        border: none !important;
+                        justify-content: center !important;
+                        margin: 0px auto;
+                        padding: 0px !important ;
+                        text-align: center;
+
+                        button{
+                            font: 24px/24px 'Public Sans';
+                            margin: 0px;
+                            width: 124px;
+                        }
+        
+                        .cancel_button{
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
         .hidden{
-            display: none;
+            display: none !important;
+        }
+
+
+        .clone{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            img{
+                margin: 0px auto;
+            }
+
+            span{
+                font: 14px/10px 'Public Sans';
+                margin: 0px auto;
+            }
+        }
+
+        #potato_clone{
+            padding: 9.52px 0px 15px 0px;
+
+            img{
+                margin-bottom: 3px;
+            }
+        }
+
+        #onion_clone{
+            padding: 15px 0px;
+
+            img{
+                margin-bottom: 6.56px;
+            }
+        }
+
+        #carrot_clone{
+            padding: 8px 0px 15px 0px;
+
+            img{
+                margin-bottom: 7px;
+            }
+        }
+
+        #corn_clone{
+            padding: 8px 0px 15px 0px;
+
+            img{
+                margin-bottom: 6.52px;
+            }
         }
     }
 }

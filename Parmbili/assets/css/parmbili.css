@@ -13,26 +13,29 @@
   font: 24px/24px 'Public Sans';
   margin: 0px;
 }
-* body .field {
-  align-content: flex-start;
+* body section {
+  align-items: flex-start;
   border-left: solid 22px #219653;
   border-right: solid 22px #219653;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-* body .field table {
+* body section .field {
+  margin: 0px auto;
+  max-width: 430px;
+}
+* body section .field table {
   border-collapse: separate;
   border-spacing: 10px;
-  margin: 40px auto 0px auto;
-  max-width: 430px;
+  margin: 40px 0px 0px 0px;
   padding: 30px auto;
 }
-* body .field table td {
+* body section .field table td {
   line-height: 0px;
   padding: 0px;
 }
-* body .field table .empty_field {
+* body section .field table .empty_field {
   background-color: #828282;
   border: none;
   border-radius: 10px;
@@ -40,10 +43,10 @@
   height: 100px;
   width: 100px;
 }
-* body .field table button:focus {
+* body section .field table button:focus {
   outline: none;
 }
-* body .field table .tilled_field {
+* body section .field table .tilled_field {
   background-color: #f2994a;
   border: none;
   border-radius: 10px;
@@ -52,12 +55,31 @@
   height: 100px;
   width: 100px;
 }
-* body .field h5 {
+* body section .field table .planted_field {
+  background-color: #f2c94c;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font: 14px/10px 'Public Sans';
+  height: 100px;
+  width: 100px;
+}
+* body section .field table .finished_planted_field {
+  background-color: #219653;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font: 14px/10px 'Public Sans';
+  height: 100px;
+  width: 100px;
+}
+* body section .field h5 {
   font: bold 20px/16px 'Public Sans';
   color: #000000;
-  margin: 9px 0px 0px 275px;
+  margin: 9px 0px 0px 10px;
 }
-* body .field .hidden {
+* body section .field .hidden {
   display: none;
 }
 * body .popover {
@@ -72,62 +94,47 @@
   width: 124px;
   font: 24px/24px 'Public Sans';
 }
-* body .crop_popover {
+* body .popover .popover-body .harvest_button {
+  margin: 0px 0px 10px 0px;
+}
+* body .crop_modal {
   background-color: #ffffff;
   border-radius: 10px;
   box-sizing: border-box;
   height: 373px;
   left: 50%;
+  overflow-y: hidden !important;
   padding: 20px !important;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
 }
-* body .crop_popover .modal-content {
+* body .crop_modal .modal-content {
   border: none !important;
   overflow: inherit;
 }
-* body .crop_popover .modal-content .modal-header {
+* body .crop_modal .modal-content .modal-header {
   border: none !important;
   padding: 0px !important;
 }
-* body .crop_popover .modal-content .modal-body {
+* body .crop_modal .modal-content .modal-body {
   padding: 0px !important ;
   text-align: center;
 }
-* body .crop_popover .modal-content .modal-body td {
-  display: flex;
-}
-* body .crop_popover .modal-content .modal-footer {
-  border: none !important;
-  padding: 0px !important ;
-}
-* body .crop_popover .modal-content .modal-footer button {
-  margin: 0px;
-}
-* body .crop_popover .modal-content .modal-footer .cancel_button {
-  margin-right: 20px;
-}
-* body .crop_popover h5 {
-  color: #2f80ed;
-  font: bold 20px/14px 'Public Sans';
-  margin: 19px 0px 0px 0px;
-  text-align: center;
-}
-* body .crop_popover table {
+* body .crop_modal .modal-content .modal-body table {
   border-collapse: separate;
   border-spacing: 20px;
   margin: 0px;
   padding: 0px;
   width: 260px;
 }
-* body .crop_popover table td {
+* body .crop_modal .modal-content .modal-body table td {
   line-height: 0px;
   max-height: 100px;
   padding: 0px;
 }
-* body .crop_popover table td .crop_square {
+* body .crop_modal .modal-content .modal-body table td .crop_square {
   background-color: #e0e0e0;
   border: none;
   border-radius: 10px;
@@ -140,30 +147,137 @@
   text-align: center;
   width: 100px;
 }
-* body .crop_popover table td .crop_square img {
+* body .crop_modal .modal-content .modal-body table td .crop_square img {
   margin: 0px auto;
 }
-* body .crop_popover table td .crop_square span {
+* body .crop_modal .modal-content .modal-body table td .crop_square span {
   font: 12px/10px 'Public Sans';
+  margin: 0px auto;
 }
-* body .crop_popover table td .crop_square:focus {
+* body .crop_modal .modal-content .modal-body table td .crop_square:focus {
   background-color: #f2c94c !important;
   outline: none;
 }
-* body .crop_popover div {
+* body .crop_modal .modal-content .modal-footer {
+  border: none !important;
+  padding: 0px !important ;
+}
+* body .crop_modal .modal-content .modal-footer button {
+  margin: 0px;
+}
+* body .crop_modal .modal-content .modal-footer .cancel_button {
+  margin-right: 20px;
+}
+* body .crop_modal h5 {
+  color: #2f80ed;
+  font: bold 20px/14px 'Public Sans';
+  margin: 19px 0px 0px 0px;
+  text-align: center;
+}
+* body .crop_modal div {
   display: flex;
   justify-content: space-between;
   margin: 0px auto;
   text-align: center;
 }
-* body .crop_popover div button {
+* body .crop_modal div button {
   font: 24px/24px 'Public Sans';
   margin: 0px;
   width: 120px;
 }
-* body .crop_popover div .cancel_button {
+* body .crop_modal div .cancel_button {
+  margin-right: 20px;
+}
+* body .remove_plant {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 177px;
+  left: 50%;
+  overflow-y: hidden !important;
+  padding: 20px 26px !important;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+}
+* body .remove_plant .modal-dialog {
+  margin: 0px;
+}
+* body .remove_plant .modal-dialog .modal-content {
+  border: none !important;
+  overflow: inherit;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-header {
+  border: none !important;
+  padding: 0px !important;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-header h5 {
+  color: #eb5757;
+  font: bold 20px/20px 'Public Sans';
+  margin: 0px auto 17px auto;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-body {
+  padding: 0px !important ;
+  text-align: center;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-body p {
+  color: #333333;
+  font: 16px/20px 'Public Sans';
+  margin: 0px auto 20px auto;
+  width: 166px;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-footer {
+  border: none !important;
+  justify-content: center !important;
+  padding: 0px !important ;
+  margin: 0px auto;
+  text-align: center;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-footer button {
+  font: 24px/24px 'Public Sans';
+  margin: 0px;
+  width: 124px;
+}
+* body .remove_plant .modal-dialog .modal-content .modal-footer .cancel_button {
   margin-right: 20px;
 }
 * body .hidden {
-  display: none;
+  display: none !important;
+}
+* body .clone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+* body .clone img {
+  margin: 0px auto;
+}
+* body .clone span {
+  font: 14px/10px 'Public Sans';
+  margin: 0px auto;
+}
+* body #potato_clone {
+  padding: 9.52px 0px 15px 0px;
+}
+* body #potato_clone img {
+  margin-bottom: 3px;
+}
+* body #onion_clone {
+  padding: 15px 0px;
+}
+* body #onion_clone img {
+  margin-bottom: 6.56px;
+}
+* body #carrot_clone {
+  padding: 8px 0px 15px 0px;
+}
+* body #carrot_clone img {
+  margin-bottom: 7px;
+}
+* body #corn_clone {
+  padding: 8px 0px 15px 0px;
+}
+* body #corn_clone img {
+  margin-bottom: 6.52px;
 }

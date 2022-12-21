@@ -20,63 +20,49 @@
     <!-- Custom CSS/JS -->
     <link rel="stylesheet" href="./assets/css/parmbili.css">
     <script src="./assets/js/parmbili.js"></script>
-    <style type="text/css">
-        .popover {
-            width: 304px;
-            max-width: 100%;
-        }
-        </style>
-        <script type="text/javascript">
-            $("#subscribe").popover({
-                title: '<h4>Newsletter Subscription</h4>',
-                container: 'body',
-                placement: 'bottom',
-                html: true, 
-                content: function() {
-                      return $('#popover-form').html();
-                }
-            });
-            </script>
-</head>
 <body>
     <nav>
         <h2>Parmbili</h2>
     </nav>
-    <section class="field">
-        <table cellspacing="10">
-            <tr>
-                <td><button type="button" id="field_1" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_2" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_3" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_4" class="empty_field" data-toggle="popover"></button></td>
-            </tr>
-            <tr>
-                <td><button type="button" id="field_5" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_6" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_7" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_8" class="empty_field" data-toggle="popover"></button></td>
-            </tr>
-            <tr>
-                <td><button type="button" id="field_9" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_10" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_11" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_12" class="empty_field" data-toggle="popover"></button></td>
-            </tr>
-            <tr>
-                <td><button type="button" id="field_13" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_14" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_15" class="empty_field" data-toggle="popover"></button></td>
-                <td><button type="button" id="field_16" class="empty_field" data-toggle="popover"></button></td>
-            </tr>
-        </table>
-        <h5>Total Earnings: <span id="total_earnings">50$</span></h5>
+    <section>
+        <div class="field">
+            <table>
+                <tr>
+                    <td><button type="button" id="field_1" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_2" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_3" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_4" class="empty_field" data-toggle="popover"></button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="field_5" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_6" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_7" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_8" class="empty_field" data-toggle="popover"></button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="field_9" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_10" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_11" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_12" class="empty_field" data-toggle="popover"></button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" id="field_13" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_14" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_15" class="empty_field" data-toggle="popover"></button></td>
+                    <td><button type="button" id="field_16" class="empty_field" data-toggle="popover"></button></td>
+                </tr>
+            </table>
+            <h5>Total Earnings: <span id="total_earnings">0</span>$</h5>
+        </div>
     </section>
-    <div class="modal crop_popover" id="crop_modal" tabindex="-1" role="dialog">
+
+    <!-- Modals -->
+    <div class="modal crop_modal" id="crop_modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
                 <h5>Select a Crop to Plant</h5>
-                <input type="hidden" data_field_id="">
+                <input type="hidden" data-field-id="">
             </div>
             <div class="modal-body">
                 <table>
@@ -117,21 +103,41 @@
           </div>
         </div>
     </div>
-    <div id="potato_clone" class="hidden">
+    <div class="modal remove_plant" id="remove_plant_modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h5>Remove Plant</h5>
+                <input type="hidden" data-field-id="">
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove this plant?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger cancel_button" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-secondary remove_plant_button">Remove</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Clones -->
+    <div id="potato_clone" class="clone hidden">
         <img src="./assets/images/potato.png" alt="potato">
         <span>60s</span>
     </div>
-    <div id="onion_clone" class="hidden">
+    <div id="onion_clone" class="clone hidden">
         <img src="./assets/images/onion.png" alt="onion">
         <span>80s</span>
     </div>
-    <div id="carrot_clone" class="hidden">
+    <div id="carrot_clone" class="clone hidden">
         <img src="./assets/images/carrot.png" alt="carrot">
         <span>120s</span>
     </div>
-    <div id="corn_clone" class="hidden">
+    <div id="corn_clone" class="clone hidden">
         <img src="./assets/images/corn.png" alt="corn">
         <span>180s</span>
     </div>
+    <div id="demo"></div>
 </body>
 </html>
